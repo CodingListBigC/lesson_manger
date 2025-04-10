@@ -1,0 +1,71 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #333; /* Dark background for the navbar */
+    overflow: hidden; /* Helps with layout */
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange the list items horizontally */
+}
+
+.navbar li a {
+    display: block; /* Make the links fill the list item */
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; /* Remove underlines from links */
+}
+
+.navbar li a:hover {
+    background-color: #ddd; /* Light background on hover */
+    color: black;
+}
+
+/* Dropdown specific styles */
+.dropdown {
+    float: left; /* Position the dropdown list item */
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit; /* Inherit background from the navbar */
+    font-family: inherit; /* Inherit font from the body */
+    margin: 0; /* Remove default margins */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+}
+
+.dropdown-content {
+    display: none; /* Hide the dropdown content by default */
+    position: absolute; /* Position it relative to the dropdown button */
+    background-color: #8d8d8d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a shadow */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Make each link take up a full line */
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown content on hover */
+}
