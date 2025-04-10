@@ -1,0 +1,60 @@
+<mxfile host="65bd71144e">
+    <diagram id="86KrscvIC3Ffwa8-RngW" name="Page-1">
+        <mxGraphModel dx="807" dy="511" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="whiteSpace=wrap;html=1;fillColor=light-dark(#2A2A2A,#1C1C1C);" parent="1" vertex="1">
+                    <mxGeometry x="40" y="360" width="720" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Home" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="360" width="60" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Contact Us" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="360" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Intrument Rental" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="360" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Lessons" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="360" width="60" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="610" y="360" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" parent="11" vertex="1">
+                    <mxGeometry width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Search&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FFFFFF);rounded=1;align=left;strokeColor=none;" parent="11" vertex="1">
+                    <mxGeometry x="10" y="10" width="130" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="?" style="whiteSpace=wrap;html=1;strokeColor=none;rounded=1;fillColor=#378E91;fontColor=light-dark(#FFFFFF,#FFFFFF);gradientColor=#39CACE;" parent="11" vertex="1">
+                    <mxGeometry x="100" y="10" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FFFFFF);rounded=0;align=left;strokeColor=none;" parent="11" vertex="1">
+                    <mxGeometry x="90" y="10" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="12" target="17">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="440" y="520" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="400" y="320"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Category" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="360" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="This Will Not Appera In the Main Site Page" style="whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="255" y="260" width="90" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="This WIl Open The Category Page Below" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="290" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="13" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
