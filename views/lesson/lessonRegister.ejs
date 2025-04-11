@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="../form.css">
+	</head>
+	<%- include('../public/navbarMainSite') %>
+	<body>
+		<div class="account">
+		<h1>Lesson Register</h1>
+
+			<form action="register" method="post" id="accountForm">
+			<br />
+			<label for="firstName">First Name: </label>
+			<br />
+			<input type="text" id="firstName" name="firstName" required placeholder="Enter first name"/>
+			<br>
+			<label for="lastName">Last Name: </label>
+			<br />
+			<input type="text" id="lastName" name="lastName" required placeholder="Enter last name"/>
+			<br />
+			<label for="id">Id: </label>
+			<br />
+			<input type="text" id="id" name="id" required placeholder="Enter id"/>
+			<br />
+			<label for="username">Username: </label>
+			<br />
+			<input type="text" id="username" name="username" required placeholder="Enter username"/>
+			<br />
+			<label for="password">Password: 
+			<span class="required">*</span>
+			</label>
+			<br />
+			<input type="password" id="password" name="password" required placeholder="Enter password"/>
+			<br />	
+			<button type="submit">Register</button>
+			<br />
+		</form>
+		</div>
+		<div class="wrongPage">
+			<p> Need to get lesson <a href="/lesson">Find Lesson</a></p>
+		</div>
+	</body>
+</html>

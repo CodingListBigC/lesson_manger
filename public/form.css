@@ -1,0 +1,52 @@
+
+div.login, div.account {
+	background-color: #261077;
+	padding: 20px;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 25px;
+	text-align: center;
+	color: white;
+}
+form#accountForm {
+	text-align: left;
+	width: 100%;
+	border-radius: 16px;
+	margin: 0 auto;
+}
+form#accountForm label {
+	color: white;
+	font-family: "Homenaje", sans-serif;
+	font-size: 20px;
+}
+form#accountForm input[type="text"],
+form#accountForm input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0 20px 0;
+	border: none;
+	background: white;
+	color: black;
+	box-sizing: border-box; /* Ensures inputs fit inside the form */
+}
+form#accountForm input[type="text"]:focus,
+form#accountForm input[type="password"]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+form#accountForm button {
+	background: linear-gradient(to right, #067175, #08bec5);
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%; /* Make the button fit the form width */
+	box-sizing: border-box; /* Ensures button fits inside the form */
+	border-radius: 15px;
+}
+div.wrongPage {
+	margin: auto;
+	padding: 20px;
+	width: 50%;
+	text-align: center;
+}
