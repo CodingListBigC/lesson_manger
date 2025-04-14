@@ -7,16 +7,12 @@ const app = express(); // Create an instance of express
 const PORT = 3000; // Define the port number
 const middleware = require("./security/middleware"); // Import custom middleware for security
 const lessonRoutes = require("./routes/lessonRoutes/lesson"); // Import lesson routes
-
-app.use("/lesson", lessonRoutes);
-// Set EJS as the templating engine
-app.set("view engine", "ejs");
-// Set the views directory to the main project root
-app.set("views", path.join(__dirname, "views")); // Set were the views are located
+const database = require("./database/db.js");
 
 // Middleware to parse request body and set up sessions
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public")); // Serve static files
+app.use(express.json()); // For parsing JSON data
 
 // Session configuration
 app.use(
@@ -26,6 +22,11 @@ app.use(
 		saveUninitialized: true,
 	})
 );
+app.use("/lesson", lessonRoutes);
+// Set EJS as the templating engine
+app.set("view engine", "ejs");
+// Set the views directory to the main project root
+app.set("views", path.join(__dirname, "views")); // Set were the views are located
 
 // Function to get the local IP address
 function getLocalIpAddress() {

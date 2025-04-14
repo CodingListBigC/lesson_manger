@@ -13,13 +13,13 @@
 			<div class="main">
 				<h1>Lesson Login</h1>
 			</div>
-			<form action="/login" method="post" id="accountForm">
+			<form action="/lesson/login" method="post" id="accountForm">
 				<label for="username">Username: <span class="required">*</span></label>
 				<br />
 				<input
 					type="text"
 					id="username"
-					name="name"
+					name="username"
 					required
 					placeholder="Enter username"
 				/>
@@ -29,13 +29,14 @@
 				<input
 					type="password"
 					id="password"
-					name="name"
+					name="password"
 					required
 					placeholder="Enter password"
 				/>
 				<br />
 				<button type="submit">Login</button>
 			</form>
+			<p class="required">* Required fields</p>
 		</div>
 		<div class="wrongPage">
 			<p>Need Lesson Register? <a href="/lesson">Register</a> here.</p>

@@ -18,31 +18,28 @@ client
 	.connect()
 	.then(() => {
 		console.log("Connected to PostgreSQL!");
-		// Optionally, run a test query
-		return client.query("SELECT NOW()");
-	})
-	.then((res) => {
-		console.log("Database Time:", res.rows[0]);
 	})
 	.catch((err) => {
 		console.error("Connection error", err.stack);
-	})
-	.finally(() => {
-		// Close the connection after the query completes
-		client.end();
 	});
 
-// Optional: Create a table if it doesn't exist (example)
-const createTable = `
-CREATE TABLE IF NOT EXISTS lessons (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  description TEXT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-`;
+// Optional: Create a table if it doesn't exist (you might want to run this separately just once)
+// const createTable = `
+// CREATE TABLE IF NOT EXISTS users (
+//   id INTEGER PRIMARY KEY,
+//   name VARCHAR(255) NOT NULL,
+//   userName VARCHAR(20) NOT NULL,
+//   password VARCHAR(20) NOT NULL,
+//   birthDay INTEGER NOT NULL,
+//   birthMonth INTEGER NOT NULL,
+//   birthYear INTEGER NOT NULL,
+//   teacher BOOLEAN DEFAULT FALSE
+// )`;
 
-client
-	.query(createTable)
-	.then(() => console.log("Table created or already exists"))
-	.catch((err) => console.error("Error creating table", err.stack));
+// client
+// 	.query(createTable)
+// 	.then(() => console.log("Table created or already exists"))
+// 	.catch((err) => console.error("Error creating table", err.stack));
+
+// Export the client so other parts of your app can use it
+module.exports = client;
