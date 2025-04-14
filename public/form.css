@@ -1,4 +1,5 @@
 
+
 div.login, div.account {
 	background-color: #261077;
 	padding: 20px;
@@ -7,6 +8,9 @@ div.login, div.account {
 	margin-top: 25px;
 	text-align: center;
 	color: white;
+}
+.required {
+	color: red;
 }
 form#accountForm {
 	text-align: left;
@@ -50,3 +54,4 @@ div.wrongPage {
 	width: 50%;
 	text-align: center;
 }
+
