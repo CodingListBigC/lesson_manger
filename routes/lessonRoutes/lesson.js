@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
 			console.log("User found:", user);
 			req.session.user = {
 				id: user.id,
-				name: user.name,
+				name: user.lastName,
 				username: user.username,
 				teacher: user.teacher,
 				nextLesson: {

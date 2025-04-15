@@ -2,11 +2,15 @@
 <html lang="en">
 	<head>
 		<title>Account Home Page</title>
+		<link 
+      			rel="stylesheet" 
+			href="../../navbar.css" 
+		/>
 	</head>
-
+	<%- include('./navbarAccount') %>
 	<body>
 		<h1>This is the account Main page</h1>
-		<p>
+	<p>
 			Welcome <%= user.name %> to your account home page!
 			<br />
 			<% if (user.nextLesson && user.nextLesson.date) { %> Your next Lesson is
@@ -14,4 +18,5 @@
 			is not available. <% } %>
 		</p>
 	</body>
+
 </html>

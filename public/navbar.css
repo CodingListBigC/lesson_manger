@@ -1,10 +1,4 @@
-<link
-	href="https://fonts.googleapis.com/css?family=Homenaje"
-	rel="stylesheet"
-	type="text/css"
-/>
-<style>
-	body {
+body {
 		margin: 0;
 		padding: 0;
 		font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode",
@@ -123,27 +117,3 @@
 	.dropdown:hover .dropdown-content {
 		display: block; /* Show the dropdown content on hover */
 	}
-</style>
-
-<ul id="navbar">
-	<li><a hre="/mainSite">Home</a></li>
-	<li><a href="#Contact">Contact Us</a></li>
-	<li><a href="#rental">Instrument Rentals</a></li>
-	<li class="dropdown">
-		<a href="/lesson" class="dropbtn">Lesson</a>
-		<div class="dropdown-content">
-			<a href="/lesson/Login">Login</a>
-			<a href="/lesson/Register">Register</a>
-			<a href="/lesson">Find</a>
-		</div>
-	</li>
-
-	<li class="right">
-		<div class="searchBar">
-			<form action="/search" method="get">
-				<input type="text" name="q" placeholder="Search..." />
-				<button type="submit">Search</button>
-			</form>
-		</div>
-	</li>
-</ul>

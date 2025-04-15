@@ -1,0 +1,8 @@
+pg_ctl -D $PREFIX/var/lib/postgresql start
+pg_ctl -D $PREFIX/var/lib/postgresql stop
+
+cratedb lessonmanger
+
+To open the data base type this command
+psql mydb
+

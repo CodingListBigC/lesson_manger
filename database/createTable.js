@@ -20,7 +20,8 @@ client
 		const createTable = `
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
+        firstName VARCHAR(255) NOT NULL,
+        lastName VARCHAR(255) NOT NULL,
         userName VARCHAR(20) NOT NULL,
         password VARCHAR(20) NOT NULL,
         birth DATE NOT NULL,
@@ -45,4 +46,4 @@ client
 	});
 
 // Export the client so other parts of your app can use it
-module.exports = client;
+
