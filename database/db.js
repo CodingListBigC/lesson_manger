@@ -1,4 +1,4 @@
-// Load environment variables from the .env file
+// This file sets up a connection to a PostgreSQL database using the 'pg' package.
 require("dotenv").config();
 
 // Import the 'pg' package to interact with PostgreSQL
