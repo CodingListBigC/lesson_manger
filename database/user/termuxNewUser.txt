@@ -4,7 +4,7 @@ const readline = require("readline");
 
 // PostgreSQL client
 const client = new Client({
-	user: process.env.DB_USER,
+	user: process.env.DB_USERNAME,
 	host: process.env.DB_HOST,
 	database: process.env.DB_NAME,
 	password: process.env.DB_PASSWORD,
@@ -25,25 +25,37 @@ const ask = (question) =>
 
 		console.log("\n📝 Enter user details:\n");
 
-		const firstName = await ask("First Name: ");
-        const lastName = await ask("Last Name: ");
-        
+		const name = await ask("Full Name: ");
 		const userName = await ask("Username: ");
 		const password = await ask("Password: ");
 		const birth = await ask("Birthdate (YYYY-MM-DD): ");
-
+		const teacherAnswer = await ask("Is Teacher? (yes/no): ");
+		const teacher = teacherAnswer.trim().toLowerCase() === "yes";
+		const teacherNumber = teacher ? parseInt(await ask("Teacher Number: ")) : 0;
+		const nextLesson =
+			(await ask("Next Lesson Date (YYYY-MM-DD, blank for default): ")) || null;
+		const lessonTime =
+			(await ask("Lesson Time (HH:MM:SS, default 00:00:00): ")) || "00:00:00";
+		const lessonDuration = parseInt(
+			(await ask("Lesson Duration (Each Slot is 30 Mintues, default 1): ")) ||
+				"1"
+		);
 
 		// Insert user
 		await client.query(
-			`INSERT INTO users 
-        (firstName, lastName, username, password, birth)
-       VALUES ($1, $2, $3, $4, $5)`,
+			`INSERT INTO users
+        (name, username, password, birth, teacher, teacherNumber, nextLesson, lessonTime, lessonDuration)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
 			[
-				firstName,
-                lastName,
+				name,
 				userName,
 				password,
-				birth
+				birth,
+				teacher,
+				teacherNumber,
+				nextLesson || null,
+				lessonTime,
+				lessonDuration,
 			]
 		);
 

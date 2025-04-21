@@ -7,6 +7,7 @@ const app = express(); // Create an instance of express
 const PORT = 3000; // Define the port number
 const middleware = require("./security/middleware"); // Import custom middleware for security
 const lessonRoutes = require("./routes/lessonRoutes/lesson"); // Import lesson routes
+const accountRoutes = require("./routes/lessonRoutes/account/lessonAccount.js");
 const database = require("./database/db.js");
 
 // Middleware to parse request body and set up sessions
@@ -23,6 +24,7 @@ app.use(
 	})
 );
 app.use("/lesson", lessonRoutes);
+app.use("/account", accountRoutes);
 // Set EJS as the templating engine
 app.set("view engine", "ejs");
 // Set the views directory to the main project root
