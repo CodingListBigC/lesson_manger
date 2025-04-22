@@ -10,13 +10,14 @@
 	<%- include('./navbarAccount') %>
 	<body>
 		<h1>This is the account Main page</h1>
-	<p>
-			Welcome <%= user.name %> to your account home page!
-			<br />
-			<% if (user.nextLesson && user.nextLesson.date) { %> Your next Lesson is
-			<%= user.nextLesson.date %>. <% } else { %> Your next Lesson information
-			is not available. <% } %>
+		<p>
+			Welcome <%= user.name.first %> to your account home page!
 		</p>
+		<br />
+		<div style="background: gray">
+			<h2>Lessons </h2>
+			<p>Date <%= user.nextLesson.date %> </p>
+		</div>
 	</body>
 
 </html>

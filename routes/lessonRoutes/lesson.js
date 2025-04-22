@@ -1,6 +1,7 @@
 const express = require("express"); // Import express framework
 const router = express.Router(); // Router instance for handling routes
 const dbFunction = require("../../database/dbFunction");
+
 router.get("/", (req, res) => {
 	// Render the lesson page
 	res.render("lesson/lesson"); // Corrected path
@@ -15,7 +16,8 @@ router.get("/Register", (req, res) => {
 	// Render the lesson registration page
 	res.render("lesson/lessonRegister"); // Corrected path
 });
-router.get("/lesson.css	", (req, res) => {
+
+router.get("/lesson.css", (req, res) => {
 	// Serve the lesson CSS file
 	res.sendFile(__dirname + "/lesson/lesson.css"); // Corrected path
 });
@@ -40,20 +42,21 @@ router.post("/login", async (req, res) => {
 			console.log("User found:", user);
 			req.session.user = {
 				id: user.id,
-				name: user.lastName,
+				name: {
+					last: user.lastname, // Corrected property name
+					first: user.firstname, // Corrected property name
+				},
 				username: user.username,
 				teacher: user.teacher,
 				nextLesson: {
-					date: user.nextLesson,
-					time: user.lessonTime,
-					duration: user.lessonDuration,
+					date: user.nextlesson, // Corrected property name
+					time: user.lessontime, // Assuming this field exists, adjust if needed
+					duration: user.lessonduration, // Assuming this field exists, adjust if needed
 				},
-				nextLesson: user.nextLesson,
-				freeAvailable: user.freeAvailable,
+				freeAvailable: user.freeavailable, // Corrected property name
 			}; // Store user in session
-			res.render("account/mainPage", {
-				user: req.session.user,
-			}); // Render the main page with user data
+			console.log(req.session.user.name);
+			res.redirect("/account"); // Render the main page with user data
 		} else {
 			res.json({ success: false, message: "User not found." });
 		}
