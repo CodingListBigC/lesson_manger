@@ -1,6 +1,6 @@
 // This file sets up a connection to a PostgreSQL database using the 'pg' package.
-require("dotenv").config();
-
+import dotenv from 'dotenv';
+dotenv.config();
 // Import the 'pg' package to interact with PostgreSQL
 const { Client } = require("pg");
 
