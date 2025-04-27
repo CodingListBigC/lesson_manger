@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Account Home Page</title>
+		<link 
+      rel="stylesheet" 
+			href="../../navbar.css" 
+		/>
+	</head>
+	<%- include('./navbarAccount') %>
+	<body>
+		<h1>This is the account Main page</h1>
+		<p>
+			Welcome <%= user.name.first %> to your account home page!
+		</p><br />
+		<div style="background: gray">
+			<h2>Lessons </h2>
+			<p>Date <%= user.nextLesson.date %> </p>
+		</div>
+	</body>
+
+</html>

@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "createTable": "node ./database/createTable.js",
+    "newUserManul": "node ./database/user/newUser.js"
   },
   "author": "Christian List",
   "license": "ISC",
