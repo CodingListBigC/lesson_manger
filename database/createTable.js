@@ -52,12 +52,12 @@ client
 				student_ID INTEGER,
 				teacher_ID INTEGER,
 				lesson_start TIME DEFAULT NULL,
-				lesson_date INTEGER DEFAULT NULL,
+				lesson_date DATE DEFAULT NULL,
 				make_up_available BOOLEAN DEFAULT FALSE,
         is_changed_lesson BOOLEAN DEFAULT FALSE,
         change_lesson_time TIME DEFAULT NULL,
         change_lesson_date DATE DEFAULT NULL
-      );
+  );
 
 			CREATE TABLE IF NOT EXISTS teacher (
 				id SERIAL PRIMARY KEY,

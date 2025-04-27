@@ -6,22 +6,22 @@ const { Client } = require("pg");
 
 // Create a new client instance using environment variables
 const client = new Client({
-	user: process.env.DB_USER, // DB username from .env
-	host: process.env.DB_HOST, // DB host from .env
-	database: process.env.DB_NAME, // DB name from .env
-	password: process.env.DB_PASSWORD, // DB password from .env
-	port: process.env.DB_PORT, // DB port from .env
+  user: process.env.DB_USER, // DB username from .env
+  host: process.env.DB_HOST, // DB host from .env
+  database: process.env.DB_NAME, // DB name from .env
+  password: process.env.DB_PASSWORD, // DB password from .env
+  port: process.env.DB_PORT, // DB port from .env
 });
 
 // Connect to the PostgreSQL database
 client
-	.connect()
-	.then(() => {
-		console.log("Connected to PostgreSQL!");
-	})
-	.catch((err) => {
-		console.error("Connection error", err.stack);
-	});
+  .connect()
+  .then(() => {
+    console.log("Connected to PostgreSQL!");
+  })
+  .catch((err) => {
+    console.error("Connection error", err.stack);
+  });
 
 // Optional: Create a table if it doesn't exist (you might want to run this separately just once)
 // const createTable = `
@@ -42,4 +42,4 @@ client
 // 	.catch((err) => console.error("Error creating table", err.stack));
 
 // Export the client so other parts of your app can use it
-module.exports = client;
+export const dbClient = { client };
