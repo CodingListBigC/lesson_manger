@@ -36,11 +36,11 @@ const ask = (question) =>
 		// Insert user
 		await client.query(
 			`INSERT INTO users 
-        (firstName, lastName, username, password, birth)
+        (first_Name, last_Name, user_Name, password, birth)
        VALUES ($1, $2, $3, $4, $5)`,
 			[
 				firstName,
-                lastName,
+        lastName,
 				userName,
 				password,
 				birth
