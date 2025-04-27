@@ -1,8 +1,6 @@
-pg_ctl -D $PREFIX/var/lib/postgresql start
-pg_ctl -D $PREFIX/var/lib/postgresql stop
+$ sudo -u postgres psql -D lessonmanger
 
-cratedb lessonmanger
+$ sudo systemctl status postgres
 
-To open the data base type this command
-psql mydb
-
+$ sudo systemctl start postgres
+$ sudo systemctl stop postgres
