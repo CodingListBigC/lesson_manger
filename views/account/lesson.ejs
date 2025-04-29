@@ -7,9 +7,24 @@
 	</head>
 	<%- include('./navbarAccount') %>
 	<body>
-		<h1> Lesson Main Page</h1>
+		<h1>Lesson Main Page</h1>
 		<p>
-	
+      <% lessons.forEach(lesson => { %>
+      <div class"lesson">
+        <p><strong>Date:</strong> <%= lesson.date %> </p>     
+        <p><strong>ID:</strong> <%= lesson.id %> </p>
+        <p><strong>Location:</strong> <%= lesson.location %> </p> 
+        <p><strong>Instrument:</strong> <%= lesson.instrument %> </p>
+        <div class="teacher">
+          <p><strong>Teacher Name:</strong><%= lesson.teacher.name %></p>
+          <% if (lesson.image) {%>  
+            <img src="<%= lesson.image %>" alt="Image of lesson teacher">
+          <% } else { %>
+            <p>No Image of Teacher Avilable</p>
+          <% } %>
+        </div>
+       </div>
+   <% }); %>
 		</p>
 	</body>
 </html>

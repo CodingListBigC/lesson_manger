@@ -7,12 +7,13 @@ router.get("/",middleware.isLoggedIn,(req,res) => {
 	});
 });
 
-router.get("/lesson", (req, res) => {
+router.get("/lesson", middleware.isLoggedIn, (req, res) => {
 	res.render("account/lesson");
 });
 
-router.get("/instrument", (req, res) => {
-	res.render("account/lesson");
+router.get("/instrument", middleware.isLoggedIn, (req, res) => {
+	res.render("account/lesson", {
+  });
 });
 
 module.exports = router;
