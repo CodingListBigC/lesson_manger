@@ -61,7 +61,9 @@ client
 
 			CREATE TABLE IF NOT EXISTS teacher (
 				id SERIAL PRIMARY KEY,
-				hours_ID INTEGER[] DEFAULT NULL,
+        userId INT DEFAULT NULL,
+        teacher_img VARCHAR(30) DEFAULT NULL,
+        hours_ID INTEGER[] DEFAULT NULL,
 				instrument_List_ID INTEGER DEFAULT NULL,
 				lessson_List_Today INTEGER DEFAULT NULL,
 				does_Double_Lesson BOOLEAN DEFAULT FALSE
