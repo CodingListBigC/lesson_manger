@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
 	try {
 		// Now you can use 'dbClient' to talk to your database!
 		const result = await dbClient.query(
-			"SELECT * FROM users WHERE username = $1",
+			"SELECT * FROM users WHERE user_name = $1",
 			[usernameFromForm]
 		);
 
