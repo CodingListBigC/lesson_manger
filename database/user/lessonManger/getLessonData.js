@@ -19,7 +19,6 @@ async function getLessonData(studentId, lessonNumber) {
       console.log("Error: No lesson ID found for student ID:", studentId, ", at index:", lessonNumber);
       return;
     }
-
     const lessonDefaultResults = await dbClient.query('SELECT * FROM lessondefault WHERE id = $1', [lessonResultsId]);
     if (!ifResultsThere(lessonDefaultResults)) {
       console.log("Error: No lesson default found with ID:", lessonResultsId);
@@ -35,30 +34,33 @@ async function getLessonData(studentId, lessonNumber) {
     console.log("Number of upcoming lessons:", up_comming_lessons_id.length);
     let lessonArray = [];
     for (let lessonArrayIndex = 0; lessonArrayIndex < up_comming_lessons_id.length; lessonArrayIndex++) {
+      
       const lessonDataResults = await dbClient.query(`SELECT * FROM lesson WHERE id = $1`, [up_comming_lessons_id[lessonArrayIndex]]);
       if (!ifResultsThere(lessonDataResults)) {
         console.log("Error: No data found for lesson with studentID:", studentId, ", lesson_id:", up_comming_lessons_id[lessonArrayIndex]);
         continue; // Skip to the next iteration if no lesson data is found
       }
       const lessonDataRow = lessonDataResults.rows[0];
-
-      const teacherData = await getTeacherInfo(lessonDataRow.teacher_ID);
-      console.log(teacherData)
+      const teacherData = await getTeacherInfo(lessonDefaultResults.rows[0].teacher_id);
+      if (teacherData == null){
+        console.log("There is not teahcer data for id: ", lessonDefaultResults.rows[0].teacher_id)
+      }
+      console.log("Teacher ID: ", lessonDefaultResults.rows[0].teacher_id)
       let returnData = {
         data: lessonDataRow.lesson_date, // Date of lesson
         id: lessonDataRow.id, // Id of lesson
         location: lessonDataRow.location, // Location of the lesson
         instrument: lessonDefaultResults.rows[0].instrument_type, // Instrument Type of a INTEGER
         teacher: {
-          id: [up_comming_lessons_id[lessonArrayIndex]],
-          picture_url: teacherData["picture_url"],
-          first_name: teacherData["first_name"],
-          last_name: teacherData["last_name"],
+          id: lessonDefaultResults.rows[0].teacher_id,
+          picture_url: teacherData.teacher_url,
+          first_name: teacherData.first_name,
+          last_name: teacherData.last_name,
         }
       };
       lessonArray.push(returnData);
     }
-    console.log("Finished processing lessons:", lessonArray);
+    //console.log("Finished processing lessons:", lessonArray);
     return lessonArray; // Return the array of lesson data
   } catch (error) {
     console.error("An error occurred:", error);
@@ -73,10 +75,11 @@ async function ifResultsThere(results) {
 async function getTeacherInfo(teacherId) {
   try {
     const teacherResults = await dbClient.query(`SELECT * FROM teacher WHERE id = $1`, [teacherId]);
-    if (!ifResultsThere(teacherResults)) {
+    if (!(await ifResultsThere(teacherResults))) {
       console.log("No teacher found with ID:", teacherId);
       return null;
     }
+    // console.log(teacherResults);
     return teacherResults.rows[0];
   } catch (error) {
     console.error("Error fetching teacher info:", error);
@@ -84,5 +87,5 @@ async function getTeacherInfo(teacherId) {
   }
 }
 
-// await getLessonData(1, 2);
+await getLessonData(2, 1);
 getLessonData(1, 0);

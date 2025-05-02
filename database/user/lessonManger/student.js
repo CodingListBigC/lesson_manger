@@ -86,7 +86,7 @@ async function createLessonMonth(studentID, numberOfLesson) {
 
   }
   for (let listOfDates = 0; listOfDates < lessonDates.length; listOfDates++) {
-    if (!lessonDates[listOfDates]["done"]) {
+    if (lessonDates[listOfDates]["done"]) {
       console.log("Not Done:", lessonDates[listOfDates]);
       const lesson = lessonDates[listOfDates];
 
@@ -99,10 +99,8 @@ async function createLessonMonth(studentID, numberOfLesson) {
       ]);
 
       console.log("Complete Time");
-
       if (await ifResultsThere(create_Lesson_results)) {
         //console.log("Complete Correct:", create_Lesson_results.rows[0].id);
-
         lesson["done"] = true;
         lesson["id"] = create_Lesson_results.rows[0].id;
       } else {
@@ -169,8 +167,6 @@ async function getLessonInfo(lesson_id) {
     const results = await dbClient.query(
       "SELECT * FROM lessonDefault WHERE id = $1",
       [lesson_id]
-    );
-
     if (results.rows.length > 0) {
       return results.rows[0];
     } else {
@@ -227,4 +223,4 @@ async function getLessonDate(lesson_id) {
 
 // Example call
 await createLessonMonth(1, 0);
-// await createLessonMonth(2, 1); // if you want to test for another student
+await createLessonMonth(2, 1); // if you want to test for another student
